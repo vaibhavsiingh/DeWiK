@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: holesky
+    source:
+      address: "0x404952965FD4512655bD3F685524aF4400bEDa46"
+      abi: Contract
+      startBlock: 2471693
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ArticleAdded
+        - ArticleUpdated
+        - ArticleDeleted
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: ArticleAdded(indexed uint256,string,string,indexed address,uint256,uint256)
+          handler: handleArticleAdded
+        - event: ArticleUpdated(indexed uint256,string,string,indexed address,uint256,uint256)
+          handler: handleArticleUpdated
+        - event: ArticleDeleted(indexed uint256,indexed address,uint256)
+          handler: handleArticleDeleted
+      file: ./src/contract.ts

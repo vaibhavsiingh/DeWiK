@@ -1,0 +1,35 @@
+type ArticleAdded @entity(immutable: true) {
+  id: Bytes!
+  Contract_id: BigInt! # uint256
+  title: String! # string
+  contentHash: String! # string
+  author: Bytes! # address
+  timestamp: BigInt! # uint256
+  version: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ArticleUpdated @entity(immutable: true) {
+  id: Bytes!
+  Contract_id: BigInt! # uint256
+  title: String! # string
+  contentHash: String! # string
+  editor: Bytes! # address
+  timestamp: BigInt! # uint256
+  version: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ArticleDeleted @entity(immutable: true) {
+  id: Bytes!
+  Contract_id: BigInt! # uint256
+  deleter: Bytes! # address
+  timestamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

@@ -1,0 +1,168 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      { "name": "", "type": "address" },
+      { "name": "", "type": "uint256" }
+    ],
+    "name": "authorArticles",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "bytes32" }],
+    "name": "titleToId",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "articleCount",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "uint256" }],
+    "name": "articles",
+    "outputs": [
+      { "name": "title", "type": "string" },
+      { "name": "contentHash", "type": "string" },
+      { "name": "author", "type": "address" },
+      { "name": "timestamp", "type": "uint256" },
+      { "name": "version", "type": "uint256" },
+      { "name": "isDeleted", "type": "bool" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "id", "type": "uint256" },
+      { "indexed": false, "name": "title", "type": "string" },
+      { "indexed": false, "name": "contentHash", "type": "string" },
+      { "indexed": true, "name": "author", "type": "address" },
+      { "indexed": false, "name": "timestamp", "type": "uint256" },
+      { "indexed": false, "name": "version", "type": "uint256" }
+    ],
+    "name": "ArticleAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "id", "type": "uint256" },
+      { "indexed": false, "name": "title", "type": "string" },
+      { "indexed": false, "name": "contentHash", "type": "string" },
+      { "indexed": true, "name": "editor", "type": "address" },
+      { "indexed": false, "name": "timestamp", "type": "uint256" },
+      { "indexed": false, "name": "version", "type": "uint256" }
+    ],
+    "name": "ArticleUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "id", "type": "uint256" },
+      { "indexed": true, "name": "deleter", "type": "address" },
+      { "indexed": false, "name": "timestamp", "type": "uint256" }
+    ],
+    "name": "ArticleDeleted",
+    "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_title", "type": "string" },
+      { "name": "_contentHash", "type": "string" }
+    ],
+    "name": "addArticle",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_id", "type": "uint256" },
+      { "name": "_newContentHash", "type": "string" }
+    ],
+    "name": "updateArticle",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_id", "type": "uint256" }],
+    "name": "deleteArticle",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "_id", "type": "uint256" }],
+    "name": "getArticle",
+    "outputs": [
+      { "name": "", "type": "string" },
+      { "name": "", "type": "string" },
+      { "name": "", "type": "address" },
+      { "name": "", "type": "uint256" },
+      { "name": "", "type": "uint256" },
+      { "name": "", "type": "bool" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "_title", "type": "string" }],
+    "name": "getArticleByTitle",
+    "outputs": [
+      { "name": "", "type": "uint256" },
+      { "name": "", "type": "string" },
+      { "name": "", "type": "string" },
+      { "name": "", "type": "address" },
+      { "name": "", "type": "uint256" },
+      { "name": "", "type": "uint256" },
+      { "name": "", "type": "bool" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "_author", "type": "address" }],
+    "name": "getAuthorArticles",
+    "outputs": [{ "name": "", "type": "uint256[]" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getArticlesCount",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
